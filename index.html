@@ -1,12 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
+
 <body>
-    <p>dupa</p>
+    <header>
+        <a href="/" class="logo">
+            <img src="./images/img_56357.png" alt="logo">
+            <div class="logo-name">Weather.js</div>
+        </a>
+
+        <div class="input-wrapper">
+            <input type="text" placeholder="Location..." />
+            <button>Search</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="current">
+            <div class="current-left">
+                <div class="current-max">
+                    Max. temperature <span id="max-temp">22</span> &#8451;
+                </div>
+                <div class="current-min">
+                    Min. temperature <span id="min-temp">10</span> &#8451;
+                </div>
+            </div>
+
+            <div class="current-main">
+                <h1 class="location-city">City</h1>
+                <div id="icon-container0"><img id="weather-icon" src="" alt="Weather icon"></div>
+
+
+                <div class="temperature-section">
+                    <h2 class="temp-value">25</h2>
+                    <span>&#8451;</span>
+                </div>
+                <div class="temp-description">####</div>
+            </div>
+
+            <div class="current-right">
+                <div class="current-pressure">
+                    Pressure <span id="pressure">1000</span> hPa
+                </div>
+                <div class="current-humidity">
+                    Hmidity <span id="humidity">50</span> &percnt;
+                </div>
+            </div>
+        </div>
+
+        <div class="cards-container">
+            <div class="card" id="card1">
+                <div class="date-hour">12:00 wtorek</div>
+                <div class="date-full">12 marca 2019</div>
+
+                <div class="card-temp">
+                    <div id="icon-container0"><img id="weather-icon" src="" alt="Weather icon"></div>
+                    <div class="card-temp"><span>&#8451;</span></div>
+                </div>
+
+                <div class="temp-description">####</div>
+                <div class="wind">Wind: <span class="wind-value">9.24</span> m/s</div>
+            </div>
+
+            <div class="card" id="card1">
+                <div class="date-hour">12:00 wtorek</div>
+                <div class="date-full">12 marca 2019</div>
+
+                <div class="card-temp">
+                    <div id="icon-container0"><img id="weather-icon" src="" alt="Weather icon"></div>
+                    <div class="card-temp"><span>&#8451;</span></div>
+                </div>
+
+                <div class="temp-description">####</div>
+                <div class="wind">Wind: <span class="wind-value">9.24</span> m/s</div>
+            </div>
+
+        </div>
+    </main>
+    <script src="index.js"></script>
 </body>
+
 </html>
