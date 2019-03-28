@@ -7,6 +7,11 @@ let tempDescription = document.querySelector('.temp-description');
 let tempValue = document.querySelector('.temp-value'); 
 let locationCity = document.querySelector('#location');
 let weatherIcon = document.querySelector('#weather-icon');
+let maxTemp = document.querySelector('#max-temp');
+let minTemp = document.querySelector('#min-temp');
+let pressure = document.querySelector('#pressure');
+let humidity = document.querySelector('#humidity');
+
 
 
 
@@ -61,7 +66,7 @@ button.addEventListener("click", function(){
                 
                 time.textContent = hours+':'+(minutes<10?'0':'')+minutes;
 
-                date.textContent = day+'.'+(month<10?'0':'')+month+'.'+year;
+                date.textContent = (day<10?'0':'')+day+'.'+(month<10?'0':'')+month+'.'+year;
 
                 icon.src = "http://openweathermap.org/img/w/" + iconCode + ".png";
 
@@ -78,11 +83,17 @@ button.addEventListener("click", function(){
                 console.log(data);
 
                 let iconCode = data.list[0].weather[0].icon;
+                
+                maxTemp.textContent = calculate(data.list[0].main.temp_max);
+                minTemp.textContent = calculate(data.list[0].main.temp_min);
 
                 tempValue.textContent = calculate(data.list[0].main.temp);
                 tempDescription.textContent = capitalize(data.list[0].weather[0].description);
                 locationCity.textContent = data.city.name;
                 weatherIcon.src = "http://openweathermap.org/img/w/" + iconCode + ".png";
+
+                pressure.textContent = Math.floor(data.list[0].main.pressure);
+                humidity.textContent = data.list[0].main.humidity;
 
                 data.list.forEach(populateCards);
             } 
