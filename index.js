@@ -42,12 +42,34 @@ button.addEventListener("click", function(){
         .then(data => {
 
             function populateCards(item, index, arr) {
-                // console.log(index);
+                let timestamp = new Date(data.list[index].dt * 1000);
+                let hours = timestamp.getHours();
+                let minutes = timestamp.getMinutes();
+                let day = timestamp.getDate();
+                let month = timestamp.getMonth();
+                let year = timestamp.getFullYear();
+
+                let iconCode = data.list[index].weather[0].icon;
                 
-                // let card = document.querySelector("#card"+index);
-            
+                let time = document.querySelector("#time-card"+index);
+                let date = document.querySelector("#date-card"+index);
+                let icon = document.querySelector("#icon-card"+index);
                 let temp = document.querySelector("#temp-card"+index);
+                let description = document.querySelector("#description-card"+index);
+                let wind = document.querySelector("#wind-card"+index);
+                
+                
+                time.textContent = hours+':'+(minutes<10?'0':'')+minutes;
+
+                date.textContent = day+'.'+(month<10?'0':'')+month+'.'+year;
+
+                icon.src = "http://openweathermap.org/img/w/" + iconCode + ".png";
+
                 temp.textContent = calculate(data.list[index].main.temp);
+                
+                description.textContent = capitalize(data.list[index].weather[0].description);
+
+                wind.textContent = data.list[index].wind.speed;
             
             
             }

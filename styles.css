@@ -35,7 +35,14 @@ header {
     width: auto;
 }
 
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+}
+
 .card {
     background-color: aquamarine;
+    width: 200px;
     margin: 10px;
 }
