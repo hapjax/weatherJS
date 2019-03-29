@@ -4,45 +4,144 @@
 
 body {
     padding:  0;
-    padding-top: 70px;
+    /* padding-top: 70px; */
     margin: 0;
     min-height: 100vh;
     background: linear-gradient(rgb(47,150,163), rgb(48,62,143));
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+    font-size: 1.075em;
 }
 
+.hidden {
+    display: none;
+}
+
+/* Header */
+
 header {
-    height: 70px;
-    width: 100%;
-    background-color: red;
-    position: fixed;
-    top: 0;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    height: 140px;
+    width: 100%;
+    padding: 0 1.5em;
+    /* position: fixed; */
+    top: 0;
 }
 
 .logo {
     display: flex;
+    height: 100%;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.logo img {
+    height: 80%;
+    width: auto;
+    filter: invert(1);
+}
+
+.logo div {
+    margin-left: 16px;
+    
+}
+
+.input-wrapper {
+    display: flex;
     flex-direction: row;
     height: 100%;
-    background-color: green;
     align-items: center;
 }
 
-
-.logo img {
-    height: 100%;
-    width: auto;
+input {
+    height: 30%;
+    /* width: auto; */
+    padding: 0 16px;
+    font-size: 20px;
+    border: none;
+    box-shadow: inset 8px 3px 18px -4px rgba(0, 0, 0, .4);
+    border-radius: 5px;
 }
 
+button {
+    margin: 0 1em;
+    height: 30%;
+    background: #59a5d8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Current weather section */
+
+.current {
+     display: flex;
+     justify-content: space-evenly;
+     align-items: center;
+     max-width: 1000px;
+     margin: 64px auto;
+ }
+
+.current-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ .current-main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+ }
+
+ #location {
+     font-weight: bold;
+ }
+
+ .main-icon {
+     height: 75px;
+ }
+
+ .main-icon img{
+    height: 100%;
+    width: auto;
+ }
+
+ .temperature-section {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+ }
+
+
+ /* Cards */
+
 .cards-container {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    max-width: 1800px;
+    padding: 0 16px;
+    margin: 0 auto;
 }
 
 .card {
-    background-color: aquamarine;
-    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 20%;
+    background-color: #59a5d8;
+    min-width: 200px;
+    
+    padding: 1.5em 3em;
     margin: 10px;
+    border-radius: 5px;
+    
 }

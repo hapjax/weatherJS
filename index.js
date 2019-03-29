@@ -3,8 +3,9 @@ let city = "brno";
 const proxy = `https://cors-anywhere.herokuapp.com/`; 
 // const api = 
 
-let tempDescription = document.querySelector('.temp-description');
-let tempValue = document.querySelector('.temp-value'); 
+let main = document.querySelector('main');
+let tempDescription = document.querySelector('#temp-description');
+let tempValue = document.querySelector('#temp-value'); 
 let locationCity = document.querySelector('#location');
 let weatherIcon = document.querySelector('#weather-icon');
 let maxTemp = document.querySelector('#max-temp');
@@ -63,7 +64,8 @@ button.addEventListener("click", function(){
                 let description = document.querySelector("#description-card"+index);
                 let wind = document.querySelector("#wind-card"+index);
                 
-                
+                main.className = "";
+
                 time.textContent = hours+':'+(minutes<10?'0':'')+minutes;
 
                 date.textContent = (day<10?'0':'')+day+'.'+(month<10?'0':'')+month+'.'+year;
